@@ -6,12 +6,16 @@ import cors from 'cors';
 import postRoutes from './routes/posts.js';
 
 const app = express();
+
+// set up prefix for routes
+app.use('/post', postRoutes)
+
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
 
-// set up MongoDB
+// set up and connect MongoDB
 const CONNECTION_URL = 'mongodb+srv://winnie:wMh3OGIZDUHQ0zc0@cluster0.vp6cc2s.mongodb.net/?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
 
