@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+
 import moments from './images/moments.png';
+import Posts from './components/Posts/Posts';
+import Form from './components/Form/Form';
 
 const App = () => {
   return (
@@ -13,13 +16,10 @@ const App = () => {
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} sm={7}>
-              <Post />
-
+              <Posts />
             </Grid>
             <Grid item xs={12} sm={4}>
               <Form />
-              
-              
             </Grid>
 
           </Grid>
