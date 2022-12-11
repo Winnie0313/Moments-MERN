@@ -7,12 +7,12 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-// set up prefix for routes
-app.use('/post', postRoutes)
-
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
+
+// set up prefix for routes
+app.use('/posts', postRoutes)
 
 
 // set up and connect MongoDB
