@@ -16,7 +16,7 @@ const Form = () => {
 
   return (
     <paper className={classes.paper}>
-      <form autoComplete="off" noValidate className={classes.form} onSubmit={handleSubmit}>
+      <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">Creating a Moment</Typography>
         <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
@@ -26,7 +26,6 @@ const Form = () => {
           <FileBase  type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedField: base64 })} />
         </div>
         <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-        <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
 
     </paper>
