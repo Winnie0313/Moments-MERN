@@ -13,7 +13,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch the action 
+    // dispatch the action to the reducer to update the state in store
     dispatch(createPost(postData));
 
   };
